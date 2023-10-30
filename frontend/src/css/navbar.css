@@ -1,0 +1,222 @@
+.nav-bar {
+    width: 100%;
+    background-color: var(--bs-primary);
+    display: flex;
+    align-items: center;
+}
+
+.nav-bar .container-fluid {
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+}
+button.nav_link{
+    background-color: transparent;
+    border: 0px;
+    line-height: inherit;
+    z-index: 100;
+}
+.logo {
+    display: flex;
+    font-size: 25px;
+    font-weight: 900;
+    text-decoration: none;
+}
+.content-menu{
+    width: 100%;
+}
+.nav-list {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    margin-left: 10px;
+    transition: transform .5s;
+    
+}
+
+.nav-item {
+    display: flex;
+    position: relative;
+    align-items: center;
+    margin: 0 5px;
+    --clip: polygon(0 0, 0 0, 0 0, 0 0);
+    cursor: pointer;
+}
+
+.nav_link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--bs-white);
+    margin: 0;
+    padding: 15px 5px;
+}
+
+.nav-icon {
+    width: 20px;
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+}
+
+.arrow {
+    width: 20px;
+}
+
+.nav-item:hover{
+    --clip:polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+.nav_link:hover{
+    background-color: rgba(var(--bs-link-hover-color-rgb), 1);
+}
+.content-shadow{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    filter: drop-shadow(0 0 3px  var(--bs-primary-text-emphasis));
+    z-index: 100;
+}
+
+.item-list {
+    padding: 0;
+    width: max-content;
+    transform: translateY(100%);
+    background-color: var(--bs-primary);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    clip-path: var(--clip);
+    transition: clip-path .3s;
+    overflow: hidden;
+}
+
+.item-list .nav_link {
+    padding: 10px 35px;
+}
+
+/* el boton de hamburgues */
+.menu-button {
+    background-color: transparent;
+    border: 1px solid rgba(var(--bs-white-rgb), 0.5);
+    border-radius: 6px;
+    padding: 2px 5px;
+    display: none;
+    margin-left: auto;
+}
+
+.menu-button svg {
+    width: 30px;
+    color: var(--bs-white);
+}
+
+.menu-button:hover {
+    background-color: rgba(var(--bs-white-rgb), 0.2);
+}
+
+
+
+@media (max-width:900px) {
+    .link-text {
+        display: none;
+    }
+
+    .nav-icon {
+        width: 25px;
+    }
+
+    .content-menu {
+        width: 100%;
+    }
+
+    .nav-list {
+        justify-content: space-around;
+    }
+    .nav_link{
+        padding: 10px;
+    }
+}
+
+@media (max-width:576px) {
+    .nav-bar .container-fluid {
+        padding: 10px 12px;
+    }
+
+    .nav-list {
+        height: 100%;
+        flex-direction: column;
+        width: max-content;
+        clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+        transition: clip-path .3s;
+        background-color: var(--bs-primary);
+        margin: 0;
+        z-index: 100;
+        overflow-y: auto;
+        justify-content: start;
+    }
+    .nav-list::-webkit-scrollbar {
+        width: 10px;
+        background-color: transparent;
+    }
+    
+    .nav-list::-webkit-scrollbar-thumb {
+        background-color: rgba(var(--bs-link-hover-color-rgb), 0.5);
+        border-radius: 5px;
+    }
+    .content-menu {
+        position: fixed;
+        z-index: 100;
+        background-color: rgba(0, 0, 0, 0.5);
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 0px;
+    }
+    .link-text {
+        display: block;
+    }
+
+    .nav-item {
+        position: static;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        flex-direction: column;
+    }
+
+    .nav_link {
+        display: flex;
+        align-items: center;
+        padding: 20px 5px;
+        width: 100%;
+    }
+    .content-shadow{
+        position: static;
+        filter: drop-shadow(0 0 0  var(--bs-primary-text-emphasis));
+    }
+    .item-list {
+        transform: none;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        border-radius: 0;
+        padding-left: 10px;
+        height: 0px;
+        transition: height .5s;
+    }
+    .item-list .nav_link {
+        border-left: 2px solid var(--bs-primary-text-emphasis);
+        padding: 10px 30px;
+        
+    }
+    .menu-button {
+        display: block;
+    }
+    .content-menu-show {
+        right: 0;
+        width: 100%;
+    }
+    .menu-show {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        transition: clip-path .3s;
+    }
+}

@@ -1,0 +1,60 @@
+.tabla-notas{
+    width: 100%;
+    min-width: 1000px;
+    border: 2px solid var(--bs-primary);
+    border-top-width: 5px;
+    border-bottom-width: 5px;
+    border-radius: 5px;
+    text-align: center;
+}
+.container-table{
+    overflow-x: auto;
+    width: 100%;
+}
+.container-table::-webkit-scrollbar {
+    height: 10px;
+    background-color: transparent;
+}
+
+.container-table::-webkit-scrollbar-thumb {
+    background-color: rgba(var(--bs-info-rgb), 0.8);
+    border-radius: 5px;
+}
+.tabla-notas tr{
+    border: 1px solid var(--bs-primary);
+    font-weight: 800;
+}
+thead, tbody th{
+    background-color: var(--bs-info-text-emphasis);
+    color: white;
+}
+.tabla-notas td, .tabla-notas th{
+    padding: 5px 0;
+    border-left: 1px solid var(--bs-primary);
+    border-right: 1px solid var(--bs-primary);
+}
+.tabla-notas .actividad{
+    width: 100px;
+}
+.tabla-notas input[type="number"]{
+    width: 90px;
+    outline: none;
+    border: 0px solid var(--bs-gray-700);
+    padding: 0 5px;
+    border-radius: 3px;
+    box-shadow:none;
+    transition:box-shadow 0.2s  ;
+    background-color: transparent;
+    text-align: center;
+    font-weight: bold;
+}
+.tabla-notas input[type="number"]:hover{
+    background-color: var(--bs-gray-200);
+    
+}
+
+.tabla-notas input[type="number"]:focus {
+    border-color: var(--bs-primary);
+    background-color: var(--bs-white);
+    box-shadow: 0px 0px 2px 4px var(--bs-info-border-subtle);
+}
